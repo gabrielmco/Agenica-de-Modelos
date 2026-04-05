@@ -1,0 +1,154 @@
+/* ==========================================================================
+   Works Section (Horizontal Flex Accordion)
+   ========================================================================== */
+.works {
+  width: 100%;
+  min-height: 100vh;
+  background-color: $color-black;
+  padding: $spacing-header-v $spacing-header-h;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  // Header Duplo - Corrigido
+  &__header {
+    display: flex;
+    justify-content: flex-start;
+    gap: 5rem; // Reduzido de 12rem para não ficar colado na direita
+    align-items: flex-start;
+    margin-bottom: 4rem;
+    padding-top: 2rem;
+  }
+
+  &__header-left {
+
+    // Margem superior removida para alinhar perfeitamente com a lista da direita
+    p {
+      color: $color-text-muted;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      line-height: 1.6;
+      text-transform: uppercase;
+      max-width: 300px; // Evita que a linha fique muito longa
+    }
+  }
+
+  &__header-right {
+    text-align: left;
+  }
+
+  &__models-list {
+    list-style: none;
+
+    li {
+      display: block; // Força a ficar um embaixo do outro
+      width: fit-content; // Força a caixa a ser só do tamanho da palavra
+      margin-bottom: 0.8rem;
+      color: $color-white;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      font-family: $font-extended;
+      transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+      opacity: 0.3;
+      cursor: pointer;
+
+      &.active {
+        opacity: 1;
+        transform: translateX(20px);
+      }
+    }
+  }
+
+  // Accordion Horizontal
+  &__accordion {
+    display: flex;
+    gap: 0.75rem;
+    height: 65vh;
+    min-height: 400px;
+    width: 100%;
+  }
+
+  &__card {
+    position: relative;
+    flex: 1;
+    border-radius: 2rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: flex 1.2s cubic-bezier(0.19, 1, 0.22, 1),
+                filter 0.6s ease;
+    overflow: hidden;
+    cursor: pointer;
+    filter: brightness(0.55);
+
+    &:hover {
+      filter: brightness(0.75);
+    }
+
+    &.active {
+      flex: 6;
+      filter: brightness(1);
+
+      .works__card-glass {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        visibility: visible;
+        transition-delay: 0.3s;
+      }
+    }
+  }
+
+  // Liquid Glass do Acordeão Ativo (Flutuante Premium - Corrigido)
+  &__card-glass {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.5rem;
+    width: auto;
+    min-width: 220px;
+    padding: 1.5rem;
+    margin-right: 1.5rem;
+    border-radius: 1rem;
+
+    // Efeito Liquid Glass Premium
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.02) 100%);
+    backdrop-filter: blur(24px) saturate(160%);
+    -webkit-backdrop-filter: blur(24px) saturate(160%);
+    border-top: 1px solid rgba(255, 255, 255, 0.2); // Refração da luz
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px) scale(0.95);
+    transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1); // Overshoot spring
+  }
+
+  &__card-title {
+    font-family: $font-extended;
+    font-size: 1.6rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 0.3rem;
+  }
+
+  &__card-role {
+    font-size: 0.75rem;
+    color: $color-text-muted;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  &__card-year {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: $color-white;
+  }
+}

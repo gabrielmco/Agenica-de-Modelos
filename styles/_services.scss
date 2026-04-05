@@ -1,0 +1,218 @@
+/* ==========================================================================
+   Services & Showcase Section
+   ========================================================================== */
+.services {
+  width: 100%;
+  background-color: $color-black;
+  padding: 8rem $spacing-header-h;
+  display: flex;
+  flex-direction: column;
+  gap: 10rem; // Mantém o respiro premium entre os grandes blocos
+
+  // 1. Bloco Superior (Carousel)
+  &__carousel {
+    display: grid;
+    // CORREÇÃO: A coluna da imagem agora tem um tamanho máximo travado, e o texto fica com o resto.
+    // O 'gap' foi reduzido para aproximar os dois.
+    grid-template-columns: 380px 1fr;
+    gap: 5rem;
+    align-items: center; // Alinha a imagem e o texto perfeitamente pelo centro vertical
+  }
+
+  &__carousel-left {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+  }
+
+  &__tag {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  &__image-wrapper {
+    width: 100%;
+    aspect-ratio: 4 / 5; // CORREÇÃO: Proporção um pouco mais baixa (não tão "comprida")
+    border-radius: 2rem;
+    overflow: hidden;
+    position: relative;
+    background-color: #111;
+  }
+
+  &__carousel-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    transition: opacity 0.4s ease;
+  }
+
+  &__carousel-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__carousel-content {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2rem;
+  }
+
+  &__count {
+    color: $color-white;
+    font-family: $font-extended;
+    font-size: 0.75rem;
+    margin-bottom: 2rem;
+  }
+
+  &__title {
+    color: $color-white;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+  }
+
+  &__desc {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.8rem;
+    line-height: 1.6;
+    max-width: 480px; // Largura boa para as 3/4 linhas da descrição
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+  }
+
+  &__controls {
+    display: flex;
+    gap: 1rem;
+
+    button {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: $color-white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      background: transparent;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $color-white;
+        color: $color-black;
+        transform: scale(1.08);
+      }
+
+      &:active {
+        transform: scale(0.9);
+        transition-duration: 0.1s;
+      }
+    }
+  }
+
+  // 2. Bloco Central (Core Statement & CTA)
+  &__statement {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__statement-title {
+    font-family: $font-extended;
+    font-size: clamp(1.4rem, 2.5vw, 3rem); // CORREÇÃO: Fonte ligeiramente menor
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    color: $color-white;
+    white-space: nowrap; // O SEGREDO: Proíbe o navegador de quebrar a linha. Só o seu <br> tem poder aqui!
+  }
+
+  &__statement-sub {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    align-self: flex-start;
+    padding: 0.6rem 0.6rem 0.6rem 1.5rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: $color-white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 999px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    .btn-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      font-size: 0.8rem;
+      transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  background-color 0.35s ease;
+    }
+
+    &:hover {
+      background-color: $color-white;
+      color: $color-black;
+      border-color: $color-white;
+
+      .btn-icon {
+        background: rgba(0, 0, 0, 0.1);
+        transform: translate(2px, -1px) scale(1.05);
+      }
+    }
+
+    &:active {
+      transform: scale(0.98);
+      transition-duration: 0.1s;
+    }
+  }
+
+  // 3. Bloco Inferior (Static Cards)
+  &__gallery {
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+  }
+
+  &__gallery-card {
+    width: 420px;
+    aspect-ratio: 3 / 4;
+    border-radius: 3.5rem;
+    background-color: #222;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                box-shadow 0.5s ease;
+
+    &:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+    }
+  }
+}

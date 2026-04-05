@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+
+# SASS cache
+.sass-cache/
+*.css.map
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+
+# Agents / AI config (not needed in production)
+.agent/
+.agents/
+.testsprite/
+
+# Original heavy assets (WebP versions are tracked instead)
+imgs/*.png
+imgs/*.zip
+
+# Compiled CSS is committed for deployment (no build step needed on host)

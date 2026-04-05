@@ -1,0 +1,210 @@
+/* ==========================================================================
+   Footer Section
+   ========================================================================== */
+.footer {
+  background-color: $color-white;
+  color: $color-black;
+  padding: 8rem $spacing-header-h 2rem;
+  display: flex;
+  flex-direction: column;
+
+  // Bloco 1: Título Gigante (Agora contido e à esquerda)
+  &__brand {
+    text-align: left; // CORREÇÃO: Alinhado à esquerda
+    width: 100%;
+    max-width: 60%; // CORREÇÃO: Ocupa apenas metade/um pouco mais da página
+    margin-bottom: 6rem;
+  }
+
+  &__title {
+    font-family: $font-extended;
+    font-weight: 900;
+    // CORREÇÃO: Reduzido drasticamente para não estourar a tela
+    font-size: clamp(2.5rem, 6vw, 6.5rem);
+    line-height: 0.9;
+    letter-spacing: -1.5px;
+    text-transform: uppercase;
+    color: $color-black;
+    margin: 0;
+
+    sup {
+      font-size: clamp(0.8rem, 2vw, 2rem);
+      font-weight: 500;
+      vertical-align: super;
+      margin-left: -0.1em;
+    }
+  }
+
+  // Bloco 2: Informações
+  &__info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    font-family: $font-sans;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    // CORREÇÃO: Espaçamento GIGANTE entre os textos e os cards
+    margin-bottom: 12rem;
+  }
+
+  &__col-title {
+    color: #666666;
+    margin-bottom: 2rem;
+    font-weight: 500;
+  }
+
+  &__col-links {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+
+    a {
+      color: $color-black;
+      text-decoration: none;
+      position: relative;
+      transition: color 0.3s ease;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: $color-black;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      &:hover {
+        color: #333;
+      }
+
+      &:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+    }
+  }
+
+  &__col-text {
+    line-height: 2;
+    color: $color-black;
+  }
+
+  // Bloco 3: Grid de Imagens
+  &__gallery {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1.5rem;
+    // CORREÇÃO: Espaçamento mínimo para grudar a linha do footer embaixo dos cards
+    margin-bottom: 1.5rem;
+  }
+
+  &__card {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    border-radius: 2rem;
+
+    &.card--1 {
+      aspect-ratio: 3 / 4;
+      height: 280px;
+    }
+
+    &.card--2 {
+      aspect-ratio: 4 / 3;
+      height: 180px;
+    }
+
+    &.card--3 {
+      aspect-ratio: 3 / 4;
+      height: 480px;
+    }
+
+    &.card--4 {
+      aspect-ratio: 4 / 3;
+      height: 240px;
+    }
+
+    &.card--5 {
+      aspect-ratio: 3 / 4;
+      height: 350px;
+    }
+
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                box-shadow 0.5s ease;
+
+    &:hover {
+      transform: scale(1.03) translateY(-4px);
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15);
+    }
+  }
+
+  // Bloco 4: Footer Final
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // CORREÇÃO: Padding reduzido para a linha ficar quase "encostada" nos cards
+    padding-top: 1.5rem;
+    border-top: 1px solid #e0e0e0;
+    font-family: $font-sans;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #333333;
+  }
+
+  &__bottom-center {
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.3s ease, opacity 0.3s ease;
+
+      &:hover {
+        color: $color-black;
+        opacity: 0.7;
+      }
+    }
+  }
+
+  &__bottom-right {
+    display: flex;
+    gap: 4rem;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      position: relative;
+      transition: color 0.3s ease;
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: #333;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      }
+
+      &:hover {
+        color: $color-black;
+      }
+
+      &:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+    }
+  }
+}

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="HYPERVISION">
+  <meta name="theme-color" content="#000000">
+  <title>HYPERVISION — Agência Criativa de Design</title>
+  <meta name="description" content="HYPERVISION — Agência criativa de design que transforma marcas em sistemas visuais de alto impacto. Estratégia, identidade visual e experiências digitais em São Paulo.">
+  <link rel="canonical" href="https://hypervision.com.br">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="HYPERVISION — Agência Criativa de Design">
+  <meta property="og:description" content="Transformamos marcas em sistemas visuais de alto impacto.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://hypervision.com.br">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="HYPERVISION">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="HYPERVISION — Agência Criativa de Design">
+  <meta name="twitter:description" content="Transformamos marcas em sistemas visuais de alto impacto.">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="styles/main.css">
+
+  <!-- Fontes do Google (non-blocking) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&display=swap"></noscript>
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "HYPERVISION",
+    "description": "Agência criativa de design que transforma marcas em sistemas visuais de alto impacto.",
+    "url": "https://hypervision.com.br",
+    "email": "ola@hypervision.com.br",
+    "telephone": "+551199990000",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Av. Paulista, 1578",
+      "addressLocality": "São Paulo",
+      "addressRegion": "SP",
+      "postalCode": "01310-200",
+      "addressCountry": "BR"
+    },
+    "sameAs": [],
+    "priceRange": "$$$$"
+  }
+  </script>
+</head>
+
+<body>
+
+  <section class="hero" id="inicio">
+    <!-- Fundo em Vídeo Minimalista -->
+    <div class="hero__overlay"></div>
+    <video class="hero__video-bg" autoplay loop muted playsinline preload="auto">
+      <source src="./videos/hero.webm" type="video/webm">
+      <source src="./videos/hero.mp4" type="video/mp4">
+    </video>
+
+    <!-- Navegação (Top) -->
+    <header class="hero__header">
+      <div class="hero__logo">HYPERVISION</div>
+
+      <nav class="hero__nav" aria-label="Navegação principal">
+        <ul class="hero__links">
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+        <div class="hero__grid-icon" aria-hidden="true">
+          <!-- Nove pequenos spans para formar a grelha -->
+          <span></span><span></span><span></span>
+          <span></span><span></span><span></span>
+          <span></span><span></span><span></span>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Conteúdo Principal (Bottom) -->
+    <main class="hero__content">
+      <div class="hero__text">
+        <h1 class="hero__title">HYPERVISION</h1>
+        <p class="hero__description">
+          Lapidamos talento bruto e o transformamos em experiências visuais de alto impacto.
+          Conheça os rostos mais ousados da indústria criativa atual.
+        </p>
+      </div>
+
+      <!-- Botões de Ação -->
+      <div class="hero__actions">
+        <button class="hero__btn hero__btn--black">NÓS DEFINIMOS MARCAS</button>
+        <button class="hero__btn hero__btn--white">INICIAR SEU PROJETO</button>
+      </div>
+    </main>
+  </section>
+
+  <!-- Works Section (Horizontal Flex Accordion) -->
+  <section class="works" aria-label="Projetos" id="projetos">
+    <div class="works__header">
+      <div class="works__header-left">
+        <p>DA ESTRATÉGIA À EXECUÇÃO, TRANSFORMAMOS</p>
+        <p>IDEIAS EM SISTEMAS VISUAIS DE FORÇA QUE</p>
+        <p>CONECTAM, RESSOAM E ESCALAM.</p>
+      </div>
+      <div class="works__header-right">
+        <ul class="works__models-list">
+          <li class="active" tabindex="0">SAINT VALE</li>
+          <li tabindex="0">L'ARCHIVE</li>
+          <li tabindex="0">VELOUR HOUSE</li>
+          <li tabindex="0">CÉLESTE</li>
+          <li tabindex="0">MONA'RC</li>
+          <li tabindex="0">ALCHEMY</li>
+        </ul>
+      </div>
+    </div>
+     <!-- Container do Acordeão Horizontal -->
+    <div class="works__accordion">
+      <div class="works__card active" role="button" tabindex="0" aria-expanded="true" aria-label="Saint Vale — Moda, 2026" data-bg="./imgs/accordion-1.webp">
+        <div class="works__card-glass">
+          <div>
+            <p class="works__card-title">SAINT VALE</p>
+            <p class="works__card-role">MODA</p>
+          </div>
+          <span class="works__card-year">2026</span>
+        </div>
+      </div>
+
+      <div class="works__card" role="button" tabindex="0" aria-expanded="false" aria-label="L'Archive — Editorial, 2026" data-bg="./imgs/accordion-2.webp">
+        <div class="works__card-glass">
+          <div>
+            <p class="works__card-title">L'ARCHIVE</p>
+            <p class="works__card-role">EDITORIAL</p>
+          </div>
+          <span class="works__card-year">2026</span>
+        </div>
+      </div>
+
+      <div class="works__card" role="button" tabindex="0" aria-expanded="false" aria-label="Velour House — Passarela, 2026" data-bg="./imgs/accordion-3_202604051659.webp">
+        <div class="works__card-glass">
+          <div>
+            <p class="works__card-title">VELOUR HOUSE</p>
+            <p class="works__card-role">PASSARELA</p>
+          </div>
+          <span class="works__card-year">2026</span>
+        </div>
+      </div>
+
+      <div class="works__card" role="button" tabindex="0" aria-expanded="false" aria-label="Céleste — Commercial, 2026" data-bg="./imgs/accordion-4.webp">
+        <div class="works__card-glass">
+          <div>
+            <p class="works__card-title">CÉLESTE</p>
+            <p class="works__card-role">COMMERCIAL</p>
+          </div>
+          <span class="works__card-year">2026</span>
+        </div>
+      </div>
+
+      <div class="works__card" role="button" tabindex="0" aria-expanded="false" aria-label="Mona'rc — Vanguarda, 2026" data-bg="./imgs/accordion-5.webp">
+        <div class="works__card-glass">
+          <div>
+            <p class="works__card-title">MONA'RC</p>
+            <p class="works__card-role">VANGUARDA</p>
+          </div>
+          <span class="works__card-year">2026</span>
+        </div>
+      </div>
+
+      <div class="works__card" role="button" tabindex="0" aria-expanded="false" aria-label="Alchemy — Beleza, 2026" data-bg="./imgs/accordion-6.webp">
+        <div class="works__card-glass">
+          <div>
+            <p class="works__card-title">ALCHEMY</p>
+            <p class="works__card-role">BELEZA</p>
+          </div>
+          <span class="works__card-year">2026</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About / Manifesto Section -->
+  <section class="about" aria-label="Sobre nós" id="sobre">
+    <!-- 1. Bloco Superior (O Manifesto) -->
+    <div class="about__manifesto">
+      <p>
+        ACREDITAMOS QUE MARCA VAI ALÉM DA ESTÉTICA. É COMO SEU NEGÓCIO FALA, SENTE E VIVE NO MUNDO.
+        <span class="highlight">CADA COR, TIPO E INTERAÇÃO É INTENCIONAL—MOLDADO PARA CONTAR SUA HISTÓRIA COM
+          CLAREZA E IMPACTO.</span>
+      </p>
+    </div>
+
+    <!-- 2. Bloco Central (Grid Assimétrico) -->
+    <div class="about__center">
+      <div class="about__pills">
+        <span class="about__pill">PROPÓSITO</span>
+        <span class="about__pill">EXCELÊNCIA</span>
+        <span class="about__pill">PRECISÃO</span>
+        <span class="about__pill">PERFORMANCE</span>
+        <span class="about__pill">INOVAÇÃO</span>
+        <span class="about__pill">VISÃO</span>
+        <span class="about__pill">PARCERIA</span>
+        <span class="about__pill">REFINADO</span>
+      </div>
+
+      <div class="about__image-container" data-bg="./imgs/sobreNos.webp"></div>
+
+      <div class="about__content">
+        <p>SOMOS UM ESTÚDIO CRIATIVO QUE FORJA IDENTIDADES DE MARCA QUE CORTAM O RUÍDO, CAPTURAM
+          ATENÇÃO E GERAM RESULTADOS REAIS. TRANSFORMAMOS IDEIAS EM SISTEMAS VISUAIS DE FORÇA QUE
+          CONECTAM, RESSOAM E ESCALAM.</p>
+        <a href="#contato" class="about__btn">MAIS SOBRE NÓS <span class="btn-icon">↘</span></a>
+      </div>
+    </div>
+
+    <!-- 3. Bloco Inferior (Estatísticas) -->
+    <div class="about__stats">
+      <div class="about__stat-item">
+        <div class="about__stat-header">
+          <span class="about__stat-title">CLIENTES</span>
+          <span class="about__stat-subtitle">PARCERIAS DE LONGO PRAZO</span>
+        </div>
+        <span class="about__stat-number" data-target="12">000</span>
+      </div>
+
+      <div class="about__stat-item">
+        <div class="about__stat-header">
+          <span class="about__stat-title">PRÊMIOS</span>
+          <span class="about__stat-subtitle">RECONHECIMENTOS DO SETOR</span>
+        </div>
+        <span class="about__stat-number" data-target="10">000</span>
+      </div>
+
+      <div class="about__stat-item">
+        <div class="about__stat-header">
+          <span class="about__stat-title">PROJETOS</span>
+          <span class="about__stat-subtitle">EXPERIÊNCIAS DIGITAIS ÚNICAS</span>
+        </div>
+        <span class="about__stat-number" data-target="16">000</span>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- Services & Showcase Section -->
+  <section class="services" aria-label="Serviços" id="servicos">
+
+    <!-- 1. Bloco Superior (Carousel Estrito) -->
+    <div class="services__carousel">
+      <!-- Coluna Esquerda -->
+      <div class="services__carousel-left">
+        <span class="services__tag">SERVIÇOS</span>
+        <div class="services__image-wrapper">
+          <!-- Placeholder - updated by JS -->
+          <img src="./imgs/services-carrossel-1.webp" alt="Estratégia de Marca" class="services__carousel-img"
+            id="service-img" loading="lazy" decoding="async">
+        </div>
+      </div>
+
+      <!-- Coluna Direita (Alinhada c/ Imagem) -->
+      <div class="services__carousel-right">
+        <div class="services__carousel-content">
+          <span class="services__count" id="service-count">01/06</span>
+          <h3 class="services__title" id="service-title">ESTRATÉGIA DE MARCA</h3>
+          <p class="services__desc" id="service-desc-1">
+            REVELAMOS A ESSÊNCIA DO SEU NEGÓCIO—DEFININDO POSIÇÃO, VOZ E DIREÇÃO PARA ERGUER UMA BASE
+            SÓLIDA.
+          </p>
+          <p class="services__desc" id="service-desc-2">
+            POR MEIO DE PESQUISA PROFUNDA E RACIOCÍNIO ESTRATÉGICO AFIADO, IDENTIFICAMOS O QUE DIFERENCIA VOCÊ E ONDE
+            SEU LUGAR EXISTE. DO PÚBLICO AO CENÁRIO COMPETITIVO, CADA DECISÃO É MOLDADA COM INTENÇÃO—GARANTINDO
+            QUE SUA MARCA NÃO SEJA APENAS VISTA, MAS COMPREENDIDA. AQUI, CLAREZA SUBSTITUI SUPOSIÇÃO E SUA MARCA
+            ASSUME SUA FORMA REAL.
+          </p>
+        </div>
+
+        <!-- Controls (Not Dots) -->
+        <div class="services__controls">
+          <button id="btn-prev" aria-label="Serviço anterior">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <line x1="19" y1="12" x2="5" y2="12"></line>
+              <polyline points="12 19 5 12 12 5"></polyline>
+            </svg>
+          </button>
+          <button id="btn-next" aria-label="Próximo serviço">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Bloco Central (Core Statement & CTA) -->
+    <div class="services__statement">
+      <h2 class="services__statement-title">
+        REVELAMOS A ESSÊNCIA DO SEU NEGÓCIO—<br>
+        DEFININDO POSIÇÃO, VOZ E DIREÇÃO<br>
+        PARA ERGUER UMA BASE SÓLIDA
+      </h2>
+      <p class="services__statement-sub">
+        ANALISAMOS SEU MERCADO, DEFINIMOS SEU PÚBLICO E CRIAMOS UM PONTO CLARO DE DIFERENÇA.
+      </p>
+      <a href="#contato" class="services__btn">FALE CONOSCO <span class="btn-icon">↘</span></a>
+    </div>
+
+    <!-- 3. Bloco Inferior (Static Grid) -->
+    <div class="services__gallery">
+      <div class="services__gallery-card" data-bg="./imgs/card-1.webp"></div>
+      <div class="services__gallery-card" data-bg="./imgs/card-2.webp">
+      </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer" role="contentinfo" id="contato">
+    <!-- Block 1 -->
+    <div class="footer__brand">
+      <h2 class="footer__title" aria-hidden="true">HYPERVISION<sup>®</sup></h2>
+    </div>
+
+    <!-- Block 2 -->
+    <div class="footer__info">
+      <div class="footer__col">
+        <h4 class="footer__col-title">MENU</h4>
+        <div class="footer__col-links">
+          <a href="#">INÍCIO</a> <a href="#">ÍNDICE</a> <a href="#">PROJETOS</a> <a href="#">SOBRE</a> <a href="#">SERVIÇOS</a> <a href="#">CONTATO</a>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__col-title">SEDE</h4>
+        <div class="footer__col-text">
+          SÃO PAULO, BRASIL<br>
+          AV. PAULISTA, 1578 — 01310-200
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__col-title">CONTATO</h4>
+        <div class="footer__col-text">
+          OLA@HYPERVISION.COM.BR<br>
+          +55 11 9999-0000
+        </div>
+      </div>
+    </div>
+
+    <!-- Block 3 -->
+    <div class="footer__gallery">
+      <div class="footer__card card--1" data-bg="./imgs/footer-1.webp"></div>
+      <div class="footer__card card--2" data-bg="./imgs/footer-2.webp"></div>
+      <div class="footer__card card--3" data-bg="./imgs/footer-3.webp"></div>
+      <div class="footer__card card--4" data-bg="./imgs/footer-4.webp"></div>
+      <div class="footer__card card--5" data-bg="./imgs/footer-5.webp"></div>
+    </div>
+
+    <!-- Block 4 -->
+    <div class="footer__bottom">
+      <div class="footer__bottom-left">HYPERVISION© 2026 TODOS OS DIREITOS RESERVADOS.</div>
+      <div class="footer__bottom-center"><a href="#">POLÍTICA DE PRIVACIDADE</a></div>
+      <div class="footer__bottom-right">
+        <a href="#">INSTAGRAM</a>
+        <a href="#">YOUTUBE</a>
+        <a href="#">FACEBOOK</a>
+        <a href="#">X</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- GSAP Core & Plugins -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <!-- Main Script -->
+  <script src="js/app.js"></script>
+</body>
+
+</html>

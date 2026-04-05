@@ -1,0 +1,207 @@
+/* ==========================================================================
+   About / Manifesto Section
+   ========================================================================== */
+.about {
+  width: 100%;
+  background-color: $color-black;
+  padding: 8rem $spacing-header-h; // Alinhamento global com as laterais
+  display: flex;
+  flex-direction: column;
+  gap: 10rem; // Aumentei o gap geral da seção para respirar mais
+
+  // 1. Bloco Superior (O Manifesto)
+  &__manifesto {
+    margin-left: 0; // Colado na lateral esquerda — zero respiro
+    max-width: 95%;
+    text-align: left;
+
+    p {
+      font-size: clamp(2rem, 3.8vw, 4.5rem); // Ajustado para cravar as quebras
+      font-weight: 500;
+      line-height: 1.1;
+      letter-spacing: -1px;
+      color: rgba(255, 255, 255, 0.4); // Cor muted inicial (Cinza)
+      text-transform: uppercase;
+      max-width: 1200px; // Trava a largura para forçar as 3 linhas cinzas e 4 brancas
+
+      span.highlight {
+        color: $color-white; // Branco puro abrupto, sem degradê
+      }
+    }
+  }
+
+
+  // 2. Bloco Central (Grid Assimétrico)
+  &__center {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1fr;
+    gap: 4rem;
+    align-items: center; // Mantém a base do grid
+  }
+
+  &__pills {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); // O SEGREDO: Cria 3 colunas milimetricamente iguais
+    gap: 0.8rem 0.6rem;
+    align-self: flex-start;
+    width: 100%;
+    max-width: 440px; // Limite para as pílulas não ficarem gigantes
+  }
+
+  &__pill {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0.4rem 0.2rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 999px;
+    background: transparent;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition: border-color 0.3s ease,
+                color 0.3s ease,
+                transform 0.3s ease,
+                background-color 0.3s ease;
+    cursor: default;
+
+    &:hover {
+      border-color: rgba(255, 255, 255, 0.6);
+      color: $color-white;
+      transform: scale(1.05);
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+  }
+
+  &__image-container {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 3rem;
+    background-color: #111;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                box-shadow 0.6s ease;
+
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  &__content {
+    align-self: end; // Cravado na base da imagem central
+    padding-bottom: 2rem;
+    width: 100%; // Garante que vá até a borda
+    padding-right: 2rem;
+
+    p {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.75rem;
+      font-weight: 500;
+      line-height: 1.6;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+      max-width: 100%; // Removido o 280px. Agora estica 4 linhas até a direita!
+    }
+  }
+
+  &__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.6rem 0.6rem 0.6rem 1.5rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: $color-white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+    .btn-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      font-size: 0.8rem;
+      transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  background-color 0.35s ease;
+    }
+
+    &:hover {
+      background-color: $color-white;
+      color: $color-black;
+      border-color: $color-white;
+
+      .btn-icon {
+        background: rgba(0, 0, 0, 0.1);
+        transform: translate(2px, -1px) scale(1.05);
+      }
+    }
+
+    &:active {
+      transform: scale(0.98);
+      transition-duration: 0.1s;
+    }
+  }
+
+  // 3. Bloco Inferior (Estatísticas)
+  &__stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+    padding-top: 4rem;
+  }
+
+  &__stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; // MUDANÇA: Joga os textos de cima para a esquerda
+    text-align: left;
+  }
+
+  &__stat-header {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10rem; // MUDANÇA: Buraco gigante entre o texto e o número
+  }
+
+  &__stat-title {
+    color: $color-white;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 0.4rem;
+  }
+
+  &__stat-subtitle {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  &__stat-number {
+    align-self: center; // MUDANÇA: Pega SÓ o número e centraliza ele no meio da coluna
+    font-family: $font-extended;
+    font-size: clamp(2rem, 3vw, 6rem); // Aumentado para dar impacto
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -2px;
+    color: $color-white;
+  }
+}
