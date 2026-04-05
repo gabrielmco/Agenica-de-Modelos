@@ -144,23 +144,25 @@ document.addEventListener("DOMContentLoaded", () => {
     if (isCarouselAnimating) return;
     isCarouselAnimating = true;
     const data = servicesData[index];
-    // Fase 1: Fade out + slide down
+    // Fase 1: Fade out
     gsap.to([serviceImg, serviceCount, serviceTitle, serviceDesc1, serviceDesc2], {
       opacity: 0,
       y: -10,
       duration: 0.3,
       ease: "power2.in",
       onComplete: () => {
+        // Reset explícito de qualquer transform residual antes de trocar a imagem
+        gsap.set(serviceImg, { clearProps: "transform,y" });
         serviceImg.src = data.img;
         serviceCount.textContent = data.count;
         serviceTitle.textContent = data.title;
         serviceDesc1.textContent = data.desc1;
         serviceDesc2.textContent = data.desc2;
 
-        // Fase 2: Fade in + slide up + image scale pulse
+        // Fase 2: Fade in simples (sem scale — evita deslocamento com position:absolute)
         gsap.fromTo(serviceImg,
-          { opacity: 0, scale: 1.06 },
-          { opacity: 1, scale: 1, duration: 0.7, ease: "power3.out" }
+          { opacity: 0 },
+          { opacity: 1, duration: 0.6, ease: "power2.out" }
         );
         gsap.fromTo([serviceCount, serviceTitle, serviceDesc1, serviceDesc2],
           { opacity: 0, y: 12 },

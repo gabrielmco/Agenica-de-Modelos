@@ -36,20 +36,22 @@
 
   &__image-wrapper {
     width: 100%;
-    aspect-ratio: 4 / 5; // CORREÇÃO: Proporção um pouco mais baixa (não tão "comprida")
+    aspect-ratio: 4 / 5;
     border-radius: 2rem;
     overflow: hidden;
     position: relative;
     background-color: #111;
+    // Garante que o container nunca colapsa durante a troca de imagens via JS
+    flex-shrink: 0;
   }
 
   &__carousel-img {
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0; // top/right/bottom/left = 0 — ancora a imagem em todos os lados
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center center; // centraliza horizontalmente e verticalmente
     z-index: 1;
     transition: opacity 0.4s ease;
   }
