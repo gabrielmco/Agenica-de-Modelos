@@ -14,7 +14,7 @@
   &__header {
     display: flex;
     justify-content: flex-start;
-    gap: 5rem; // Reduzido de 12rem para não ficar colado na direita
+    gap: 5rem;
     align-items: flex-start;
     margin-bottom: 4rem;
     padding-top: 2rem;
@@ -26,8 +26,6 @@
   }
 
   &__header-left {
-
-    // Margem superior removida para alinhar perfeitamente com a lista da direita
     p {
       color: $color-text-muted;
       font-size: 0.75rem;
@@ -35,7 +33,7 @@
       letter-spacing: 0.5px;
       line-height: 1.6;
       text-transform: uppercase;
-      max-width: 300px; // Evita que a linha fique muito longa
+      max-width: 300px;
     }
   }
 
@@ -48,15 +46,16 @@
     display: block;
 
     @include respond-to(tablet) {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 2rem;
+      display: flex !important;
+      flex-wrap: wrap !important;
+      gap: 0.6rem !important;
+      margin-bottom: 2.5rem !important;
+      padding: 0;
     }
 
     li {
-      display: block; // Força a ficar um embaixo do outro
-      width: fit-content; // Força a caixa a ser só do tamanho da palavra
+      display: block;
+      width: fit-content;
       margin-bottom: 0.8rem;
       color: $color-white;
       font-size: 0.8rem;
@@ -64,16 +63,17 @@
       letter-spacing: 1px;
       text-transform: uppercase;
       font-family: $font-extended;
-      transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+      transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       opacity: 0.3;
       cursor: pointer;
 
       @include respond-to(tablet) {
-        font-size: 0.65rem;
+        font-size: 0.6rem;
         margin-bottom: 0;
-        padding: 0.4rem 0.8rem;
-        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 0.5rem 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.15);
         border-radius: 999px;
+        opacity: 0.6;
       }
 
       &.active {
@@ -81,10 +81,11 @@
         transform: translateX(20px);
 
         @include respond-to(tablet) {
-          transform: none;
+          transform: translateY(-2px);
           background-color: $color-white;
           color: $color-black;
           border-color: $color-white;
+          opacity: 1;
         }
       }
     }
@@ -135,23 +136,21 @@
     }
   }
 
-  // Liquid Glass do Acordeão Ativo (Flutuante Premium - Corrigido)
+  // Liquid Glass do Acordeão Ativo
   &__card-glass {
     position: absolute;
-    bottom: 1.5rem;
-    left: 1.5rem;
+    bottom: 2rem;
+    left: 2rem;
     width: auto;
-    min-width: 220px;
-    padding: 1.5rem;
-    margin-right: 1.5rem;
-    border-radius: 1rem;
+    min-width: 250px;
+    padding: 2rem;
+    border-radius: 1.5rem;
 
     @include respond-to(tablet) {
       bottom: 1rem;
       left: 1rem;
       right: 1rem;
-      margin-right: 0;
-      padding: 1rem;
+      padding: 1.5rem;
       min-width: 0;
     }
 
@@ -159,7 +158,7 @@
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.02) 100%);
     backdrop-filter: blur(24px) saturate(160%);
     -webkit-backdrop-filter: blur(24px) saturate(160%);
-    border-top: 1px solid rgba(255, 255, 255, 0.2); // Refração da luz
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
     border-left: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
 
@@ -170,7 +169,7 @@
     opacity: 0;
     visibility: hidden;
     transform: translateY(20px) scale(0.95);
-    transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1); // Overshoot spring
+    transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 
   &__card-title {
