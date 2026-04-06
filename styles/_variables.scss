@@ -8,8 +8,8 @@ $font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $font-extended: 'Syncopate', 'Arial Black', sans-serif; 
 
 $spacing-base: 1rem;
-$spacing-header-v: 2rem;
-$spacing-header-h: 3rem;
-$spacing-content-b: 4rem;
+$spacing-header-v: clamp(1.2rem, 3vw, 2rem);
+$spacing-header-h: clamp(1.5rem, 5vw, 3rem);
+$spacing-content-b: clamp(2rem, 5vw, 4rem);
 
 $bg-transition: 0.3s ease;

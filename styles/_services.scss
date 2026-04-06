@@ -17,6 +17,11 @@
     grid-template-columns: 380px 1fr;
     gap: 5rem;
     align-items: center; // Alinha a imagem e o texto perfeitamente pelo centro vertical
+
+    @include respond-to(tablet) {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
   }
 
   &__carousel-left {
@@ -138,7 +143,7 @@
     letter-spacing: -1px;
     text-transform: uppercase;
     color: $color-white;
-    white-space: nowrap; // O SEGREDO: Proíbe o navegador de quebrar a linha. Só o seu <br> tem poder aqui!
+    white-space: normal; // MUDANÇA: Permite quebrar em telas menores
   }
 
   &__statement-sub {
@@ -203,6 +208,11 @@
     display: flex;
     justify-content: flex-end;
     gap: 2rem;
+
+    @include respond-to(tablet) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__gallery-card {
@@ -214,6 +224,11 @@
     background-position: center;
     transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
                 box-shadow 0.5s ease;
+
+    @include respond-to(tablet) {
+      width: 100%;
+      border-radius: 2rem;
+    }
 
     &:hover {
       transform: translateY(-8px);

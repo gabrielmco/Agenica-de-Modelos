@@ -18,6 +18,11 @@
     align-items: flex-start;
     margin-bottom: 4rem;
     padding-top: 2rem;
+
+    @include respond-to(tablet) {
+      flex-direction: column;
+      gap: 2rem;
+    }
   }
 
   &__header-left {
@@ -40,6 +45,14 @@
 
   &__models-list {
     list-style: none;
+    display: block;
+
+    @include respond-to(tablet) {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+    }
 
     li {
       display: block; // Força a ficar um embaixo do outro
@@ -55,9 +68,24 @@
       opacity: 0.3;
       cursor: pointer;
 
+      @include respond-to(tablet) {
+        font-size: 0.65rem;
+        margin-bottom: 0;
+        padding: 0.4rem 0.8rem;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 999px;
+      }
+
       &.active {
         opacity: 1;
         transform: translateX(20px);
+
+        @include respond-to(tablet) {
+          transform: none;
+          background-color: $color-white;
+          color: $color-black;
+          border-color: $color-white;
+        }
       }
     }
   }
@@ -69,6 +97,12 @@
     height: 65vh;
     min-height: 400px;
     width: 100%;
+
+    @include respond-to(tablet) {
+      flex-direction: column;
+      height: 80vh;
+      min-height: 600px;
+    }
   }
 
   &__card {
@@ -111,6 +145,15 @@
     padding: 1.5rem;
     margin-right: 1.5rem;
     border-radius: 1rem;
+
+    @include respond-to(tablet) {
+      bottom: 1rem;
+      left: 1rem;
+      right: 1rem;
+      margin-right: 0;
+      padding: 1rem;
+      min-width: 0;
+    }
 
     // Efeito Liquid Glass Premium
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.02) 100%);

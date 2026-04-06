@@ -1,0 +1,28 @@
+// MAPA DE BREAKPOINTS
+$breakpoints: (
+  phone: 576px,     // Mobile (Até 576px)
+  tablet: 768px,    // iPad/Tablet (Até 768px)
+  laptop: 1024px,   // Laptop pequeno (Até 1024px)
+  ultrawide: 1600px // Ultrawide (1600px+)
+);
+
+// MIXIN DE RESPONSIVIDADE
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $value: map-get($breakpoints, $breakpoint);
+    
+    // Tratamento especial para ultrawide (min-width)
+    @if $breakpoint == ultrawide {
+      @media screen and (min-width: $value) {
+        @content;
+      }
+    } @else {
+      // Padrão Mobile Primeiro / Graceful Degradation (max-width)
+      @media screen and (max-width: $value) {
+        @content;
+      }
+    }
+  } @else {
+    @warn "Breakpoint '#{$breakpoint}' não encontrado.";
+  }
+}
