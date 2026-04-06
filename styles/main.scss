@@ -19,10 +19,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-html {
-  overflow-x: hidden;
-}
-
 a {
   text-decoration: none;
   color: inherit;
@@ -143,11 +139,7 @@ button {
     }
   }
 
-  // CORREÇÃO GLOBAL: Forçar contenção em telas pequenas
-  @include respond-to(tablet) {
-    overflow-x: hidden;
-    max-width: 100vw;
-  }
+
 
   /* Main Content (Bottom) */
   &__content {
