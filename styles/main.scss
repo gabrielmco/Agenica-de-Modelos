@@ -16,13 +16,11 @@ body {
   background-color: $color-black;
   color: $color-white;
   overflow-x: hidden;
-  max-width: 100vw;
-  width: 100%;
+  -webkit-font-smoothing: antialiased;
 }
 
 html {
   overflow-x: hidden;
-  width: 100%;
 }
 
 a {
@@ -94,16 +92,9 @@ button {
     gap: 3rem;
   }
 
-  &__bottom-right {
+  &__links {
     display: flex;
-    gap: 4rem;
-
-    @include respond-to(tablet) {
-      gap: 1rem;
-      flex-wrap: wrap;
-      justify-content: flex-start;
-      width: 100%;
-    }
+    gap: 2.5rem;
     list-style: none;
     font-size: 0.85rem;
     font-weight: 500;
@@ -134,7 +125,7 @@ button {
     }
 
     @include respond-to(tablet) {
-      display: none;
+      display: none; // Nav normal oculta no mobile
     }
   }
 
@@ -184,13 +175,12 @@ button {
 
   &__title {
     font-family: $font-extended;
-    font-size: clamp(2rem, 10vw, 7rem);
+    font-size: clamp(2rem, 9.5vw, 7rem);
     font-weight: 900;
     line-height: 0.9;
     letter-spacing: -2px;
     margin-bottom: 1rem;
     text-transform: uppercase;
-    word-break: break-word;
   }
 
   &__description {

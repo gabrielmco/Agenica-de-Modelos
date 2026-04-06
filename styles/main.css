@@ -804,13 +804,11 @@ body {
   background-color: #000000;
   color: #ffffff;
   overflow-x: hidden;
-  max-width: 100vw;
-  width: 100%;
+  -webkit-font-smoothing: antialiased;
 }
 
 html {
   overflow-x: hidden;
-  width: 100%;
 }
 
 a {
@@ -877,28 +875,20 @@ button {
   align-items: center;
   gap: 3rem;
 }
-.hero__bottom-right {
+.hero__links {
   display: flex;
-  gap: 4rem;
+  gap: 2.5rem;
   list-style: none;
   font-size: 0.85rem;
   font-weight: 500;
   letter-spacing: 0.5px;
   text-transform: uppercase;
 }
-@media screen and (max-width: 768px) {
-  .hero__bottom-right {
-    gap: 1rem;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    width: 100%;
-  }
-}
-.hero__bottom-right a {
+.hero__links a {
   position: relative;
   transition: opacity 0.3s ease;
 }
-.hero__bottom-right a::after {
+.hero__links a::after {
   content: "";
   position: absolute;
   bottom: -4px;
@@ -910,12 +900,12 @@ button {
   transform-origin: right;
   transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
-.hero__bottom-right a:hover::after {
+.hero__links a:hover::after {
   transform: scaleX(1);
   transform-origin: left;
 }
 @media screen and (max-width: 768px) {
-  .hero__bottom-right {
+  .hero__links {
     display: none;
   }
 }
@@ -962,13 +952,12 @@ button {
 }
 .hero__title {
   font-family: "Syncopate", "Arial Black", sans-serif;
-  font-size: clamp(2rem, 10vw, 7rem);
+  font-size: clamp(2rem, 9.5vw, 7rem);
   font-weight: 900;
   line-height: 0.9;
   letter-spacing: -2px;
   margin-bottom: 1rem;
   text-transform: uppercase;
-  word-break: break-word;
 }
 .hero__description {
   font-size: 1.1rem;
