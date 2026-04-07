@@ -12,7 +12,7 @@
   &__brand {
     text-align: left; // CORREÇÃO: Alinhado à esquerda
     width: 100%;
-    max-width: 60%; // CORREÇÃO: Ocupa apenas metade/um pouco mais da página
+    max-width: 70%; // CORREÇÃO: Ocupa apenas metade/um pouco mais da página
     margin-bottom: 6rem;
 
     @include respond-to(tablet) {
@@ -31,7 +31,7 @@
     text-transform: uppercase;
     color: $color-black;
     margin: 0;
-    word-break: break-word;
+
 
     sup {
       font-size: clamp(0.8rem, 2vw, 2rem);
@@ -131,31 +131,31 @@
 
     &.card--1 {
       aspect-ratio: 3 / 4;
-      height: 280px;
+      flex: 1.5;
     }
 
     &.card--2 {
       aspect-ratio: 4 / 3;
-      height: 180px;
+      flex: 1.6;
     }
 
     &.card--3 {
       aspect-ratio: 3 / 4;
-      height: 480px;
+      flex: 2.6;
     }
 
     &.card--4 {
       aspect-ratio: 4 / 3;
-      height: 240px;
+      flex: 1.4; // Largura diminuída como solicitado
     }
 
     &.card--5 {
       aspect-ratio: 3 / 4;
-      height: 350px;
+      flex: 1.8;
     }
 
     transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                box-shadow 0.5s ease;
+    box-shadow 0.5s ease;
 
     &:hover {
       transform: scale(1.03) translateY(-4px);

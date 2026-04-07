@@ -379,4 +379,58 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.querySelectorAll('[data-bg]').forEach(el => lazyBgObserver.observe(el));
 
+  /* ==========================================================================
+     MAGNETIC SPOTLIGHT REVEAL (Lanterna com Inércia)
+     ========================================================================== */
+  const magneticSpotlight = document.getElementById('magnetic-spotlight');
+  if (magneticSpotlight) {
+    const coloredLayer = magneticSpotlight.querySelector('.spotlight-colored');
+    
+    // Variáveis de alvo (mouse real) e atuais (com inércia)
+    let targetX = 50;
+    let targetY = 50;
+    let targetSize = 0;
+    
+    let currentX = 50;
+    let currentY = 50;
+    let currentSize = 0;
+    
+    // Fator de suavização (0.01 a 1 - menor é mais inércia)
+    const lerp = (start, end, factor) => start + (end - start) * factor;
+    
+    const updateSpotlight = () => {
+      // Interpola os valores atuais em direção ao alvo
+      currentX = lerp(currentX, targetX, 0.08);
+      currentY = lerp(currentY, targetY, 0.08);
+      currentSize = lerp(currentSize, targetSize, 0.12);
+      
+      if (coloredLayer) {
+        coloredLayer.style.setProperty('--x', `${currentX}%`);
+        coloredLayer.style.setProperty('--y', `${currentY}%`);
+        // Se target é 0, quando chega bem perto a gente zera visualmente
+        coloredLayer.style.setProperty('--size', `${currentSize}px`);
+      }
+      
+      requestAnimationFrame(updateSpotlight);
+    };
+    
+    requestAnimationFrame(updateSpotlight);
+    
+    magneticSpotlight.addEventListener('mousemove', (e) => {
+      const rect = magneticSpotlight.getBoundingClientRect();
+      targetX = ((e.clientX - rect.left) / rect.width) * 100;
+      targetY = ((e.clientY - rect.top) / rect.height) * 100;
+    });
+    
+    magneticSpotlight.addEventListener('mouseenter', () => {
+      // Tamanho da "lanterna" ao passar o mouse
+      targetSize = magneticSpotlight.offsetWidth * 0.7; // Responsivo baseado na largura
+    });
+    
+    magneticSpotlight.addEventListener('mouseleave', () => {
+      targetSize = 0;
+      // Ao sair, pode manter a última posição suavemente
+    });
+  }
+
 });

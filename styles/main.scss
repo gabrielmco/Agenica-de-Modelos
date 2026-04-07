@@ -11,11 +11,19 @@
   box-sizing: border-box;
 }
 
+html,
 body {
-  font-family: $font-sans;
-  background-color: $color-black;
-  color: $color-white;
+  margin: 0;
+  padding: 0;
+
+}
+
+body {
+  width: 100%;
   overflow-x: hidden;
+  position: relative;
+  font-family: $font-sans;
+  color: $color-white;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -41,7 +49,7 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  
+
   /* Video Background */
   &__video-bg {
     position: absolute;
@@ -129,7 +137,7 @@ button {
     display: grid;
     grid-template-columns: repeat(3, 3px);
     grid-gap: 3px;
-    
+
     span {
       display: block;
       width: 3px;
@@ -206,8 +214,8 @@ button {
     letter-spacing: 1px;
     text-transform: uppercase;
     transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                box-shadow 0.35s ease;
-    
+      box-shadow 0.35s ease;
+
     &:hover {
       transform: translateY(-3px);
       box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
@@ -232,4 +240,12 @@ button {
       color: $color-black;
     }
   }
+}
+
+.hero__video-bg,
+.hero__overlay {
+  // Faz ele ficar 2px mais largo e puxa 1px para a esquerda
+  // Isso cobre a falha de subpixel em todas as bordas
+  width: calc(100% + 100px);
+  transform: translateX(-30px);
 }

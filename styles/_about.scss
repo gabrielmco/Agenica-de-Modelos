@@ -87,15 +87,43 @@
     aspect-ratio: 1;
     border-radius: 3rem;
     background-color: #111;
-    background-size: cover;
-    background-position: center;
     overflow: hidden;
-    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-                box-shadow 0.6s ease;
+    position: relative;
+    transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), box-shadow 0.6s ease;
+    transform-style: preserve-3d;
 
     &:hover {
       transform: translateY(-6px);
       box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4);
+    }
+    
+    .spotlight-base {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.7) contrast(1.1); /* Mantém base mais neutra/escurecida */
+    }
+
+    .spotlight-colored {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+      
+      /* Variáveis controladas pelo JS */
+      --x: 50%;
+      --y: 50%;
+      --size: 0px; 
+      
+      /* Máscara radial bem suave e difusa */
+      -webkit-mask-image: radial-gradient(circle var(--size) at var(--x) var(--y), black 20%, transparent 80%);
+      mask-image: radial-gradient(circle var(--size) at var(--x) var(--y), black 20%, transparent 80%);
     }
   }
 
